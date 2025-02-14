@@ -40,7 +40,7 @@ class HuilvQuery(Plugin):
             if len(parts) < 2:
                 reply = Reply()
                 reply.type = ReplyType.ERROR
-                reply.content = "格式错误，请发送：汇率 源目汇率。示例：cc CNYUSD "
+                reply.content = "格式错误，请发送：汇率 源目汇率。示例：汇率 CNYUSD "
                 e_context["reply"] = reply
                 e_context.action = EventAction.BREAK_PASS
                 return
@@ -53,7 +53,7 @@ class HuilvQuery(Plugin):
                 e_context["reply"] = reply
                 e_context.action = EventAction.BREAK_PASS
             else:
-                error_message = "格式错误，请发送：汇率 源目汇率。示例：cc CNYUSD "
+                error_message = "格式错误，请发送：汇率 源目汇率。示例：汇率 CNYUSD "
                 reply.type = ReplyType.ERROR
                 reply.content = error_message
                 e_context["reply"] = reply
